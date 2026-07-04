@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>송파구 하수구 전문 - 클린배관 케어</title>
+    <style>
+        /* --- 기본 스타일 (CSS) --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            padding-bottom: 70px; /* 하단 고정 바 공간 확보 */
+        }
+
+        header {
+            background-color: #0056b3;
+            color: white;
+            text-align: center;
+            padding: 2.5rem 1rem;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* 갤러리 컨테이너 */
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        /* 카드 스타일 */
+        .work-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease;
+            cursor: pointer;
+        }
+
+        .work-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .img-wrapper {
+            width: 100%;
+            height: 220px;
+            background-color: #e9ecef;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 1.2rem;
+        }
+
+        .card-badge {
+            display: inline-block;
+            background: #e3f2fd;
+            color: #0d47a1;
+            font-size: 0.8rem;
+            font-weight: bold;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-title {
+            font-size: 1.15rem;
+            margin-bottom: 0.5rem;
+            color: #212529;
+        }
+
+        .card-desc {
+            font-size: 0.9rem;
+            color: #6c757d;
+            line-height: 1.4;
+        }
+
+        /* 모바일 고정 하단 바 (전화통화 링크 포함) */
+        .cta-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 65px;
+            background: white;
+            box-shadow: 0 -3px 10px rgba(0,0,0,0.15);
+            display: flex;
+            z-index: 999;
+        }
+
+        .cta-btn {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        /* 버튼 색상 지정 */
+        .btn-phone { background-color: #2ecc71; } /* 전화: 초록 */
+        .btn-kakao { background-color: #f9e000; color: #3c1e1e; } /* 카톡: 노랑 */
+        .btn-map { background-color: #3498db; } /* 지도: 파랑 */
+
+        .cta-btn span.icon {
+            font-size: 1.3rem;
+            margin-bottom: 2px;
+        }
+
+        /* 라이트박스 모달 */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+        }
+
+        .modal-content {
+            max-width: 800px;
+            max-height: 80vh;
+            border-radius: 4px;
+            object-fit: contain;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 2.5rem;
+            cursor: pointer;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>송파구 하수구 막힘·고압세척</h1>
+        <p>송파구 전 지역 24시 긴급 출동! 배관 내시경 정밀 진단 및 완벽 해결</p>
+    </header>
+
+    <div class="container">
+        <div class="gallery-grid">
+            
+            <div class="work-card" onclick="openModal(this)">
+                <div class="img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1585338107529-13afc5f02586?w=500" alt="송파구 하수구 고압세척">
+                </div>
+                <div class="card-content">
+                    <span class="card-badge">고압 세척</span>
+                    <h3 class="card-title">송파동 상가 빌딩 메인 배관 세척</h3>
+                    <p class="card-desc">유지방 덩어리로 꽉 막힌 지하 횡주관을 고압 세척 장비를 이용해 통쾌하게 뚫어드렸습니다.</p>
+                </div>
+            </div>
+
+            <div class="work-card" onclick="openModal(this)">
+                <div class="img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1542013936693-8848e57423e3?w=500" alt="잠실 배관 내시경">
+                </div>
+                <div class="card-content">
+                    <span class="card-badge">내시경 탐지</span>
+                    <h3 class="card-title">잠실동 아파트 배관 내부 정밀 진단</h3>
+                    <p class="card-desc">자주 막히는 배관 구조를 파악하기 위해 첨단 내시경 카메라로 내부 유기물 위치를 정확히 판독했습니다.</p>
+                </div>
+            </div>
+
+            <div class="work-card" onclick="openModal(this)">
+                <div class="img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=500" alt="가락동 하수구 수리">
+                </div>
+                <div class="card-content">
+                    <span class="card-badge">부속 교체</span>
+                    <h3 class="card-title">가락동 빌라 싱크대 배수구 세트 교체</h3>
+                    <p class="card-desc">오래되어 악취가 발생하는 노후 호스를 전면 철거하고 S트랩 신형 홈통으로 깔끔하게 교체 완료!</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="cta-bar">
+        <a href="tel:01055060040" class="cta-btn btn-phone">
+            <span class="icon">📞</span>
+            <span>전화 문의 (010-5506-0040)</span>
+        </a>
+        <a href="https://open.kakao.com/" target="_blank" class="cta-btn btn-kakao">
+            <span class="icon">💬</span>
+            <span>카톡 상담</span>
+        </a>
+        <a href="https://map.naver.com/" target="_blank" class="cta-btn btn-map">
+            <span class="icon">📍</span>
+            <span>오시는 길</span>
+        </a>
+    </div>
+
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="close-btn">&times;</span>
+        <img class="modal-content" id="modalImg">
+    </div>
+
+    <script>
+        function openModal(cardElement) {
+            const modal = document.getElementById("imageModal");
+            const modalImg = document.getElementById("modalImg");
+            const clickedImgSrc = cardElement.querySelector(".img-wrapper img").src;
+            
+            modal.style.display = "flex";
+            modalImg.src = clickedImgSrc;
+        }
+
+        function closeModal() {
+            const modal = document.getElementById("imageModal");
+            modal.style.display = "none";
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
